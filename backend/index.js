@@ -9,33 +9,33 @@ app.get('api/users', (request, response) => {
 })
 
 app.post('/api/users', (request, response) => {
-  const entry = request.body;
+  const newUser = request.body;
 
-  if (entry.userName === undefined) {
+  if (newUser.userName === undefined) {
     return response.status(400).json({ error: 'name missing' });
-  } else if (entry.password === undefined) {
+  } else if (newUser.password === undefined) {
     return response.status(400).json({ error: 'password missing' });
-  } else if (entry.car === undefined) {
+  } else if (newUser.car === undefined) {
     return response.status(400).json({ error: 'car status missing' });
-  } else if (entry.lat === undefined) {
+  } else if (newUser.lat === undefined) {
     return response.status(400).json({ error: 'latitude missing' });
-  } else if (entry.long === undefined) {
+  } else if (newUser.long === undefined) {
     return response.status(400).json({ error: 'longitude missing' });
-  } else if (entry.phoneNumber === undefined) {
+  } else if (newUser.phoneNumber === undefined) {
     return response.status(400).json({ error: 'phone number missing' });
   }
 
   const user = new User({
-    userName: entry.userName,
-    passowrd: entry.password,
-    car: entry.car,
-    lat: entry.lat,
-    long: entry.long,
-    phoneNumber: entry.phoneNumber
+    userName: newUser.userName,
+    passowrd: newUser.password,
+    car: newUser.car,
+    lat: newUser.lat,
+    long: newUser.long,
+    phoneNumber: newUser.phoneNumber
   })
 
-  user.save().then(savedEntry => {
-    response.json(savedEntry);
+  user.save().then(savedUser => {
+    response.json(savedUser);
   })
 })
 
