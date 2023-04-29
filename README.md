@@ -1,4 +1,5 @@
 # CarGo
 ### A carpooling service for students
 
-Fronted built with React
+Frontend built with React
+Backend utilizes Express and MongoDB
