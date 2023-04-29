@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const User = require('./models/user');
 const client = require('twilio')(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
+app.use(express.json());
 
 app.get('/api/users', (request, response) => {
   User.find({}).then(users => {
