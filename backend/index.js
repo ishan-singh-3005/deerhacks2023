@@ -8,7 +8,7 @@ app.get('api/users', (request, response) => {
   })
 })
 
-app.post('/api/entries', (request, response) => {
+app.post('/api/users', (request, response) => {
   const entry = request.body;
 
   if (entry.userName === undefined) {
