@@ -31,7 +31,7 @@ app.post('/api/users', (request, response) => {
 
   const user = new User({
     userName: newUser.userName,
-    passowrd: newUser.password,
+    password: newUser.password,
     car: newUser.car,
     lat: newUser.lat,
     long: newUser.long,
