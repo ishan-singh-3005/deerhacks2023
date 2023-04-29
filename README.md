@@ -1,1 +1,4 @@
-"# deerhacks2023" 
+# CarGo
+### A carpooling service for students
+
+Fronted built with React
